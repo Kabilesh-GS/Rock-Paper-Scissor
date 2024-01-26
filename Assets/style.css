@@ -1,0 +1,44 @@
+body{
+    color: #ffffff;
+    background-position: center;
+    background-color: aliceblue;
+}
+.maincont{
+    margin-top: 50px;
+    border: solid rgb(255, 255, 255);
+    padding: 40px;
+    border-radius: 90px;
+}
+#rockbtn,
+#scissorbtn,
+#paperbtn,
+#resetbtn{
+    border: solid rgb(0, 0, 0) 2px;
+    background: gray;
+    border-radius: 50%;
+    font-size: 70px;
+    cursor: none;
+}
+#resetbtn{
+    font-size: 30px;
+}
+#rockbtn:hover,
+#scissorbtn:hover,
+#paperbtn:hover,
+#resetbtn:hover{
+    background: rgb(157, 157, 157);
+}
+#yourchoice,
+#compchoice{
+    font-size: 40px;
+}
+@media only screen and (max-width: 600px){
+#rockbtn,
+#scissorbtn,
+#paperbtn{
+    font-size: 40px;
+}
+#resetbtn{
+    font-size: 20px;
+}
+}

@@ -7,6 +7,7 @@ let reset = document.getElementById("resetbtn");
 let result = document.getElementById("resultbox");
 let yoursc = document.getElementById("yourscore");
 let compsc = document.getElementById("computerscore");
+let emoji = document.getElementById("emojibox");
 let yourpts = 0;
 let comppts = 0;
 
@@ -16,11 +17,13 @@ rock.onclick = function(){
         yourch.innerHTML = "You : ✊";
         result.textContent = "Draw";
         compch.textContent = "✊ : Computer"
+        emoji.textContent = "🟰";
     }
     else if(random == 1){
         yourch.innerHTML = "You : ✊";
         result.textContent = "Computer Won!";
         compch.textContent = "✋ : Computer";
+        emoji.textContent = "🤖";
         comppts+=1;
         compsc.textContent = `Computer : ${comppts}`
 
@@ -29,6 +32,7 @@ rock.onclick = function(){
         yourch.innerHTML = "You : ✊";
         result.textContent = "You Won!";
         compch.textContent = "✌️ : Computer";
+        emoji.textContent = "👦";
         yourpts+=1;
         yoursc.textContent = `You : ${yourpts}`
     }
@@ -39,6 +43,7 @@ paper.onclick = function(){
         yourch.innerHTML = "You : ✋";
         result.textContent = "You Won!";
         compch.textContent = "✊ : Computer";
+        emoji.textContent = "👦";
         yourpts+=1;
         yoursc.textContent = `You : ${yourpts}`
     }
@@ -46,11 +51,13 @@ paper.onclick = function(){
         yourch.innerHTML = "You : ✋";
         result.textContent = "Draw";
         compch.textContent = "✋ : Computer";
+        emoji.textContent = "🟰";
     }
     else if(random == 2){
         yourch.innerHTML = "You : ✋";
         result.textContent = "Computer Won!";
         compch.textContent = "✌️ : Computer"
+        emoji.textContent = "🤖";
         comppts+=1;
         compsc.textContent = `Computer : ${comppts}`
     }
@@ -61,6 +68,7 @@ scissor.onclick = function(){
         yourch.innerHTML = "You : ✌️";
         result.textContent = "Computer Won";
         compch.textContent = "✊ : Computer";
+        emoji.textContent = "🤖";
         comppts+=1;
         compsc.textContent = `Computer : ${comppts}`
     }
@@ -68,6 +76,7 @@ scissor.onclick = function(){
         yourch.innerHTML = "You : ✌️";
         result.textContent = "You Won!";
         compch.textContent = "✋ : Computer";
+        emoji.textContent = "👦";
         yourpts+=1;
         yoursc.textContent = `You : ${yourpts}`
     }
@@ -75,6 +84,7 @@ scissor.onclick = function(){
         yourch.innerHTML = "You : ✌️";
         result.textContent = "Draw";
         compch.textContent = "✌️ : Computer";
+        emoji.textContent = "🟰";
     }
 }
 reset.onclick =  function(){
@@ -82,4 +92,10 @@ reset.onclick =  function(){
     comppts=0;
     compsc.textContent = `Computer : ${comppts}`;
     yoursc.textContent = `You : ${yourpts}`;
+    result.innerHTML = "You or Computer, Let's see!";
+    emoji.innerHTML = "👦/🤖";
 }
+
+new kursor({
+    type: 1
+})
