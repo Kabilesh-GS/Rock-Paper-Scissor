@@ -94,6 +94,8 @@ reset.onclick =  function(){
     yoursc.textContent = `You : ${yourpts}`;
     result.innerHTML = "You or Computer, Let's see!";
     emoji.innerHTML = "👦/🤖";
+    yourch.innerHTML = "You :";
+    compch.innerHTML = ": Computer";
 }
 
 new kursor({
