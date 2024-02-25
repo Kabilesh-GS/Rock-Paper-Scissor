@@ -8,8 +8,10 @@ let result = document.getElementById("resultbox");
 let yoursc = document.getElementById("yourscore");
 let compsc = document.getElementById("computerscore");
 let emoji = document.getElementById("emojibox");
-let yourpts = 0;
-let comppts = 0;
+let score = {
+    yourscore: 0,
+    compscore: 0
+}
 
 rock.onclick = function(){
     let random = Math.round(Math.random() * 2);
@@ -24,8 +26,8 @@ rock.onclick = function(){
         result.textContent = "Computer Won!";
         compch.textContent = "✋ : Computer";
         emoji.textContent = "🤖";
-        comppts+=1;
-        compsc.textContent = `Computer : ${comppts}`
+        score.compscore += 1;
+        compsc.textContent = `Computer : ${score.compscore}`;
 
     }
     else if(random == 2){
@@ -33,8 +35,8 @@ rock.onclick = function(){
         result.textContent = "You Won!";
         compch.textContent = "✌️ : Computer";
         emoji.textContent = "👦";
-        yourpts+=1;
-        yoursc.textContent = `You : ${yourpts}`
+        score.yourscore+=1;
+        yoursc.textContent = `You : ${score.yourscore}`
     }
 }
 paper.onclick = function(){
@@ -44,8 +46,8 @@ paper.onclick = function(){
         result.textContent = "You Won!";
         compch.textContent = "✊ : Computer";
         emoji.textContent = "👦";
-        yourpts+=1;
-        yoursc.textContent = `You : ${yourpts}`
+        score.yourscore+=1;
+        yoursc.textContent = `You : ${score.yourscore}`
     }
     else if(random == 1){
         yourch.innerHTML = "You : ✋";
@@ -58,8 +60,8 @@ paper.onclick = function(){
         result.textContent = "Computer Won!";
         compch.textContent = "✌️ : Computer"
         emoji.textContent = "🤖";
-        comppts+=1;
-        compsc.textContent = `Computer : ${comppts}`
+        score.compscore+=1;
+        compsc.textContent = `Computer : ${score.compscore}`
     }
 }
 scissor.onclick = function(){
@@ -69,16 +71,16 @@ scissor.onclick = function(){
         result.textContent = "Computer Won";
         compch.textContent = "✊ : Computer";
         emoji.textContent = "🤖";
-        comppts+=1;
-        compsc.textContent = `Computer : ${comppts}`
+        score.compscore+=1;
+        compsc.textContent = `Computer : ${score.compscore}`
     }
     else if(random == 1){
         yourch.innerHTML = "You : ✌️";
         result.textContent = "You Won!";
         compch.textContent = "✋ : Computer";
         emoji.textContent = "👦";
-        yourpts+=1;
-        yoursc.textContent = `You : ${yourpts}`
+        score.yourscore+=1;
+        yoursc.textContent = `You : ${score.yourscore}`
     }
     else if(random == 2){
         yourch.innerHTML = "You : ✌️";
@@ -88,10 +90,10 @@ scissor.onclick = function(){
     }
 }
 reset.onclick =  function(){
-    yourpts=0;
-    comppts=0;
-    compsc.textContent = `Computer : ${comppts}`;
-    yoursc.textContent = `You : ${yourpts}`;
+    score.compscore=0;
+    score.yourscore=0;
+    compsc.textContent = `Computer : ${score.compscore}`;
+    yoursc.textContent = `You : ${score.yourscore}`;
     result.innerHTML = "You or Computer, Let's see!";
     emoji.innerHTML = "👦/🤖";
     yourch.innerHTML = "You :";
