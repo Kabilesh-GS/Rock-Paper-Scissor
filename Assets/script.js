@@ -12,10 +12,6 @@ let score = {
     yourscore: 0,
     compscore: 0
 }
-let storedScore = localStorage.getItem('score');
-score = JSON.parse(storedScore);
-compsc.textContent = `Computer : ${score.compscore}`;
-yoursc.textContent = `You : ${score.yourscore}`;
 
 rock.onclick = function(){
     let random = Math.round(Math.random() * 2);
@@ -39,9 +35,8 @@ rock.onclick = function(){
         compch.textContent = "✌️ : Computer";
         emoji.textContent = "👦";
         score.yourscore+=1;
-        yoursc.textContent = `You : ${score.yourscore}`
+        yoursc.textContent = `You : ${score.yourscore}`;
     }
-    localStorage.setItem('score', JSON.stringify(score));
 }
 paper.onclick = function(){
     let random = Math.round(Math.random() * 2);
@@ -51,7 +46,7 @@ paper.onclick = function(){
         compch.textContent = "✊ : Computer";
         emoji.textContent = "👦";
         score.yourscore+=1;
-        yoursc.textContent = `You : ${score.yourscore}`
+        yoursc.textContent = `You : ${score.yourscore}`;
     }
     else if(random == 1){
         yourch.innerHTML = "You : ✋";
@@ -65,9 +60,8 @@ paper.onclick = function(){
         compch.textContent = "✌️ : Computer"
         emoji.textContent = "🤖";
         score.compscore+=1;
-        compsc.textContent = `Computer : ${score.compscore}`
+        compsc.textContent = `Computer : ${score.compscore}`;
     }
-    localStorage.setItem('score', JSON.stringify(score));
 }
 scissor.onclick = function(){
     let random = Math.round(Math.random() * 2);
@@ -77,7 +71,7 @@ scissor.onclick = function(){
         compch.textContent = "✊ : Computer";
         emoji.textContent = "🤖";
         score.compscore+=1;
-        compsc.textContent = `Computer : ${score.compscore}`
+        compsc.textContent = `Computer : ${score.compscore}`;
     }
     else if(random == 1){
         yourch.innerHTML = "You : ✌️";
@@ -85,7 +79,7 @@ scissor.onclick = function(){
         compch.textContent = "✋ : Computer";
         emoji.textContent = "👦";
         score.yourscore+=1;
-        yoursc.textContent = `You : ${score.yourscore}`
+        yoursc.textContent = `You : ${score.yourscore}`;
     }
     else if(random == 2){
         yourch.innerHTML = "You : ✌️";
@@ -93,7 +87,6 @@ scissor.onclick = function(){
         compch.textContent = "✌️ : Computer";
         emoji.textContent = "🟰";
     }
-    localStorage.setItem('score', JSON.stringify(score));
 }
 reset.onclick =  function(){
     score.compscore=0;
@@ -104,7 +97,6 @@ reset.onclick =  function(){
     emoji.innerHTML = "👦/🤖";
     yourch.innerHTML = "You :";
     compch.innerHTML = ": Computer";
-    localStorage.removeItem('score');
 }
 
 new kursor({
